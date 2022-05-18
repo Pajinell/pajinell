@@ -9,7 +9,7 @@
 }
 
 :root {
-  --primary-color: #d55630;
+  --primary-color: #d5303d;
   --complementary-color: #30d5c8;
   --shapes-color-light: #d7d0ce;
   --shapes-color-dark: #434040;
@@ -115,7 +115,7 @@ body.dark-mode .logo__container {
 
 .logo__text {
   color: transparent;
-  background: linear-gradient(20deg, #d55630 20%, #30d5c8 80%, #30d5c8 100%);
+  background: linear-gradient(20deg, #d5303d 20%, #30d5c8 80%, #30d5c8 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -164,7 +164,7 @@ body.dark-mode .link {
   width: 100px;
   height: 40px;
   border-radius: 30px;
-  background: linear-gradient(20deg, #30d5c8 20%, #d55630 80%, #d55630 100%);
+  background: linear-gradient(20deg, #30d5c8 20%, #d5303d 80%, #d5303d 100%);
 }
 
 .switch-mode::after {
@@ -284,7 +284,7 @@ body.dark-mode .code-line::after {
   width: 415px;
   height: 415px;
   border-radius: 50%;
-  background: linear-gradient(20deg, #d55630 20%, #30d5c8 80%, #30d5c8 100%);
+  background: linear-gradient(20deg, #d5303d 20%, #30d5c8 80%, #30d5c8 100%);
   z-index: -1;
   box-shadow: 0px 0px 1px rgba(25, 50, 90, 0.1),
     0px 1px 2px rgba(25, 50, 90, 0.1), 0px 3px 8px rgba(25, 50, 90, 0.1),
