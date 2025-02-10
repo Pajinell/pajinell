@@ -47,7 +47,8 @@ body.dark-mode {
 .container {
   max-width: 1500px;
   padding-right: 3rem;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   display: flex;
   overflow-y: auto;
   overflow-x: hidden;
@@ -60,7 +61,8 @@ body.dark-mode {
   justify-content: space-between;
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .main-section {
@@ -131,23 +133,23 @@ body.dark-mode .heading {
   background: var(--background-dark);
 }
 
-.coffee {
+.about__top {
   background: var(--background-light);
   font-size: 2rem;
   padding-top: 4rem;
 }
 
-body.dark-mode .coffee {
+body.dark-mode .about__top {
   background: var(--background-dark);
 }
 
-.link {
+.about__bottom {
   background: var(--background-light);
   font-size: 2rem;
   padding-top: 1rem;
 }
 
-body.dark-mode .link {
+body.dark-mode .about__bottom {
   background: var(--background-dark);
 }
 
@@ -220,7 +222,7 @@ body.dark-mode .line-numbers {
 }
 
 .line-numbers span {
-  padding: 4px 8px;
+  padding: 2px 8px;
   text-align: right;
 }
 
@@ -306,22 +308,27 @@ body.dark-mode .code-line::after {
 
 /* FOOTER */
 .socials,
-.copyright,
+.copyright-cookies,
 .end {
   position: relative;
   background: var(--background-light);
 }
 
 body.dark-mode .socials,
-body.dark-mode .copyright,
+body.dark-mode .copyright-cookies,
 body.dark-mode .end {
   background: var(--background-dark);
 }
 
 .copyright {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding-top: 2rem;
   font-size: 1.3rem;
+}
+
+.cookies {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  font-size: 1rem;
 }
 
 .socials__icon {
@@ -348,11 +355,6 @@ body.dark-mode .end {
 
 /* MEDIA */
 @media screen and (max-width: 1200px) {
-  .main-footer__container,
-  .container {
-    height: 100%;
-  }
-
   .main-section {
     flex-direction: column;
   }
@@ -401,12 +403,12 @@ body.dark-mode .end {
     padding-top: 3rem;
   }
 
-  .coffee {
+  .about__top {
     font-size: 1.5rem;
     padding-top: 3rem;
   }
 
-  .link {
+  .about__bottom {
     font-size: 1.5rem;
   }
 
@@ -420,6 +422,10 @@ body.dark-mode .end {
 
   .copyright {
     font-size: 1rem;
+  }
+
+  .cookies {
+    font-size: .8rem;
   }
 
   .line-numbers {
