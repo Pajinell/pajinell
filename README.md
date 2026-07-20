@@ -1,16 +1,25 @@
 ### Hi there 👋
 
-<!--
-**Pajinell/pajinell** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Jsem Pavla — Creative Technologist. UX/UI designérka s frontendovým backgroundem.
 
-Here are some ideas to get you started:
+🌐 [pajinell.cz](https://pajinell.cz) · [LinkedIn](https://www.linkedin.com/in/pajinell/)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## O tomhle repozitáři
+
+Zdrojový kód mého portfolia **[pajinell.cz](https://pajinell.cz)** — statický web, čisté HTML + CSS bez frameworku. Light/dark vzhled se přepíná automaticky podle nastavení systému.
+
+### Nasazení
+
+- Web nasazuje **Netlify**
+- Netlify sleduje větev `main` — po každém pushi se web automaticky nasadí na `pajinell.cz`.
+- Žádný build krok není potřeba, nasazuje se přímo obsah repozitáře.
+- Původní verze webu žije ve složce `/old` → [pajinell.cz/old](https://pajinell.cz/old).
+
+### Struktura
+
+- `index.html` + `main.css` — jednostránkové portfolio
+- `live-jizda-*.png`, `onboarding-*.png`, `*-thumb.png` — obrázky projektů
+- `portrait-*.jpg/png` — portréty (duotone + průhledné výřezy pro efekty)
+- `favicon.*`, `android-chrome-*`, `apple-touch-icon.png`, `site.webmanifest` — ikony
