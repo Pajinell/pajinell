@@ -4,101 +4,307 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pajinell | Pavla Havránková</title>
-<meta name="description" content="Creative Technologist. UX/UI designérka s&nbsp;frontendovým backgroundem. Nový web je na cestě.">
+<meta name="description" content="Creative Technologist. UX/UI designérka s frontendovým backgroundem">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    color-scheme: light dark;
-    --bg: #FBFBFB;
-    --text: #171717;
-    --muted: #6C6667;
-    --accent-text: #9D5C8F;
-    --comp-text: #3F6C9E;
-    --border: #E8E3E4;
-    --photo-bg: #F7EFF5;
-    --tape: rgba(190, 178, 166, 0.5);
-    --tape-edge: rgba(160, 148, 136, 0.35);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #171717;
-      --text: #FBFBFB;
-      --muted: #9B9596;
-      --accent-text: #BF7FB0;
-      --comp-text: #8FB8DD;
-      --border: #2C292A;
-      --photo-bg: #20181E;
-      --tape: rgba(251, 251, 251, 0.16);
-      --tape-edge: rgba(251, 251, 251, 0.28);
-    }
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    min-height: 100svh;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 40px; padding: 40px 24px;
-    background: var(--bg); color: var(--text);
-    font-family: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6; text-align: center;
-  }
-  .photo {
-    position: relative; width: min(220px, 55vw); aspect-ratio: 1;
-    border-radius: 24px; background: var(--photo-bg);
-  }
-  .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block; }
-  .photo::before, .photo::after {
-    content: ""; position: absolute; width: 74px; height: 32px;
-    background: var(--tape); border: 1px solid var(--tape-edge);
-    transform: rotate(45deg); z-index: 2;
-    clip-path: polygon(0 0, 96% 0, 100% 25%, 96% 50%, 100% 75%, 96% 100%, 0 100%, 4% 75%, 0 50%, 4% 25%);
-  }
-  .photo::before { top: -16px; left: calc(100% - 48px); }
-  .photo::after { top: calc(100% - 16px); left: -26px; }
-  .caption {
-    color: var(--accent-text); font-size: 13px; font-weight: 600;
-    letter-spacing: 0.35em; text-transform: uppercase;
-  }
-  h1 { font-size: clamp(38px, 8vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; margin-top: 14px; }
-  .subtitle { font-size: 19px; margin-top: 12px; }
-  .subtitle span { color: var(--muted); }
-  .wip { color: var(--muted); margin-top: 56px; }
-  .wip strong { color: var(--text); font-weight: 600; }
-  .links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; }
-  .links a { color: var(--comp-text); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--comp-text); padding-bottom: 2px; }
-  .email { color: var(--accent-text); border-color: var(--accent-text); }
-  footer { font-size: 13px; color: var(--muted); }
-</style>
+<link rel="preload" as="image" href="portrait-cutout-light.png" media="(prefers-color-scheme: light)">
+<link rel="preload" as="image" href="portrait-cutout-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="main.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
 
-  <div class="photo">
-    <picture>
-      <source srcset="portrait-duotone-dark.jpg" media="(prefers-color-scheme: dark)">
-      <img src="portrait-duotone-light.jpg" alt="Pavla Havránková" width="1200" height="1200">
-    </picture>
+<header class="container">
+  <nav class="nav" aria-label="Hlavní navigace">
+    <a class="nav__logo" href="#">Pajinell</a>
+    <ul class="nav__links">
+      <li><a href="#about">O&nbsp;mně</a></li>
+      <li><a href="#work">Projekty</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+      <!-- <li><span class="nav__dot" title="Vzhled se řídí nastavením systému"></span></li> -->
+    </ul>
+  </nav>
+</header>
+
+<main class="container" id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__photo">
+      <picture>
+        <source srcset="portrait-duotone-dark.jpg" media="(prefers-color-scheme: dark)">
+        <img src="portrait-duotone-light.jpg" alt="Pavla Havránková" width="1200" height="1200">
+      </picture>
+    </div>
+    <div>
+      <p class="hero__caption">Creative Technologist</p>
+      <h1 class="hero__name">Pavla<br>Havránková</h1>
+      <p class="hero__subtitle">UX/UI designérka <span>s&nbsp;frontendovým backgroundem</span></p>
+      <div class="hero__buttons">
+        <a class="btn btn--primary" href="mailto:me@pajinell.cz">Napište mi</a>
+        <a class="btn btn--secondary" href="https://www.linkedin.com/in/pajinell/" target="_blank" rel="noopener">LinkedIn&nbsp;<span aria-hidden="true">↗</span><span class="sr-only"> (otevře se v novém okně)</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="scroll-hint"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">O&nbsp;mně</p>
+    <div class="about__grid">
+      <div class="about__head">
+        <h2>Od kódu k&nbsp;designu</h2>
+        <p class="about__intro">Od frontendu jsem se propracovala k&nbsp;UX/UI designu. Technické znalosti mi pomáhají navrhovat věci, které dávají smysl uživatelům i&nbsp;vývojářům. A&nbsp;kde to dává smysl, zapojuju do práce AI.</p>
+      </div>
+      <div class="about__bio">
+        <p>K&nbsp;IT jsem se dostala díky <a href="https://www.czechitas.cz/">Czechitas</a>. Jednodenní workshop „Vytvoř si svůj web“ mě nadchl natolik, že jsem se přihlásila na půlroční kurz frontend kodérky, dala výpověď v&nbsp;práci office manažerky a&nbsp;šla to zkusit. Přes rok jsem pak v&nbsp;Mall.cz tvořila a&nbsp;spravovala kampaňové stránky napříč Mall skupinou v&nbsp;pěti zemích.</p>
+        <p>Potom přišlo <a href="https://www.fidoo.com">Direct Fidoo</a> a&nbsp;s&nbsp;ním Angular a B2B aplikace. Servisy jsem nepsala — stavěla jsem HTML šablony a&nbsp;starala se o&nbsp;sdílené komponenty napříč nx monorepem pro tři aplikace — největší klientskou a&nbsp;dvě interní. Zažila jsem dva brandové redesigny a&nbsp;postupně se přesunula na pozici UX/UI designérky, kde navrhuju podobu a&nbsp;flow produktu pro vývoj.</p>
+        <!--
+        <p>Mám zkušenosti s&nbsp;kódováním a&nbsp;redesignem webových aplikací. Zajímá mě UI, UX a&nbsp;design systémy. Objevuji imerzivní svět VR/AR.</p> -->
+      </div>
+      <ul class="skills">
+          <li>UX/UI Design</li>
+          <li>Design Systems</li>
+          <li>Figma</li>
+          <li>Angular</li>
+          <li>B2B</li>
+          <li>GitHub</li>
+          <li>FinTech</li>
+          <li>HTML/CSS</li>
+          <li>VR</li>
+        </ul>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <p class="section-label">Projekty</p>
+    <h2>Vybrané projekty</h2>
+    <div class="work__grid">
+      <a class="work-card" href="#" data-project="live-jizda">
+        <div class="work-card__thumb work-card__thumb--img" style="background-image: url('live-jizda-thumb.png'); background-size: cover; background-position: center;"></div>
+        <div class="work-card__row">
+          <h3 class="work-card__title">Live jízda</h3>
+          <span class="work-card__arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="work-card__tag">Mobile · UX · MVP</p>
+      </a>
+      <a class="work-card" href="#" data-project="onboarding">
+        <div class="work-card__thumb work-card__thumb--img" style="background-image: url('onboarding-thumb.png'); background-size: cover; background-position: center;"></div>
+        <div class="work-card__row">
+          <h3 class="work-card__title">Registrace klienta do fintech aplikací</h3>
+          <span class="work-card__arrow" aria-hidden="true">→</span>
+        </div>
+        <p class="work-card__tag">Onboarding · UX · FinTech</p>
+      </a>
+      <div class="work-card work-card--disabled">
+        <div class="work-card__thumb work-card__thumb--img" style="background-image: url('design-system-thumb.png'); background-size: cover; background-position: center;">
+          <span class="work-card__badge">Připravuji</span>
+        </div>
+        <div class="work-card__row">
+          <h3 class="work-card__title">Design systém</h3>
+        </div>
+        <p class="work-card__tag">UI · Dokumentace</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="section-label">Kontakt</p>
+    <div class="contact__row">
+      <div>
+        <h2>Ozvěte se, ráda se potkám.</h2>
+        <a class="contact__email" href="mailto:me@pajinell.cz">me@pajinell.cz</a>
+      </div>
+      <div class="contact__socials">
+        <a href="https://www.instagram.com/pajinell/" target="_blank" rel="noopener">Instagram&nbsp;<span aria-hidden="true">↗</span><span class="sr-only"> (otevře se v novém okně)</span></a>
+        <a href="https://www.linkedin.com/in/pajinell/" target="_blank" rel="noopener">LinkedIn&nbsp;<span aria-hidden="true">↗</span><span class="sr-only"> (otevře se v novém okně)</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer__row">
+    <p>© 2026 Pavla Havránková
   </div>
+</footer>
 
-  <main>
-    <p class="caption">Creative Technologist</p>
-    <h1>Pavla Havránková</h1>
-    <p class="subtitle">UX/UI designérka <span>s&nbsp;frontendovým backgroundem</span></p>
-    <p class="wip"><strong>Nový web je na cestě.</strong> Právě dolaďuju detaily. Zatím mě najdete tady:</p>
-  </main>
-
-  <div class="links">
-    <a class="email" href="mailto:me@pajinell.cz">me@pajinell.cz</a>
-    <a href="https://www.linkedin.com/in/pajinell/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://www.instagram.com/pajinell/" target="_blank" rel="noopener">Instagram</a>
+<!-- PROJECT DETAIL OVERLAY -->
+<div class="project-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="project-title">
+  <div class="project-overlay__backdrop"></div>
+  <div class="project-panel">
+    <div class="project-panel__bar">
+      <button class="project-panel__close" type="button" aria-label="Zavřít">✕</button>
+    </div>
+    <div class="project-panel__content">
+      <h2 class="project-panel__title" id="project-title"></h2>
+      <ul class="project-tags"></ul>
+      <div class="project-panel__body"></div>
+    </div>
   </div>
+</div>
 
-  <footer>© 2026 Pavla Havránková</footer>
+<template id="project-default">
+      <p class="project-panel__perex">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus, urna at cursus sagittis, justo dolor luctus enim, in dictum augue nunc eget ipsum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      <div class="project-panel__img" role="img" aria-label="Náhled projektu"></div>
+      <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a&nbsp;ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur.</p>
+      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+</template>
+<template id="onboarding">
+      <p class="project-panel__perex">Self-onboarding klienta. Klienti si uzavírají smlouvu sami.</p>
+      <p>Důležitou součástí každé fintech aplikace je onboarding. Proces, ve kterém klient uzavře smlouvu a&nbsp;získá plný přístup do té aplikace. Ve Fidoo jsem byla u&nbsp;dvou návrhů onboardingu. Je to oblast, kde se potkává design s&nbsp;Compliance a&nbsp;právníky. Proces musí vyhovovat regulím, a&nbsp;hlavně se v&nbsp;něm uživatel nesmí ztratit a&nbsp;vzdát to. Náročná disciplína, ale aspoň mi teď nejsou cizí pojmy jako FATCA, AML, KYC nebo UBO. :)</p>
+      <p>Onboarding, který právě spouštíme, je první verze self-onboardingu pro produkt Expense Management. Menší firmy si díky němu uzavřou smlouvu s&nbsp;Fidoo samy. Do té doby to šlo jen s&nbsp;asistencí obchodníka, který celý onboarding s&nbsp;klientem vyplnil a&nbsp;pomohl produkt do firmy zavést.</p>
+      <div class="project-screens project-screens--wide">
+        <figure>
+          <img src="onboarding-01.png" alt="Úvodní obrazovka registrace firmy do Fidoo" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Registrace firmy</figcaption>
+        </figure>
+        <figure>
+          <img src="onboarding-02.png" alt="Výběr podepisujících osob s&nbsp;ověřením identity přes Bank iD nebo doklad totožnosti" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Podepisující osoby</figcaption>
+        </figure>
+        <figure>
+          <img src="onboarding-03.png" alt="Elektronický podpis smlouvy se smluvní dokumentací a&nbsp;ověřením PIN kódem" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Podpis smlouvy s&nbsp;PIN ověřením</figcaption>
+        </figure>
+      </div>
+</template>
+<template id="live-jizda">
+      <p class="project-panel__perex">Jak dostat Knihu jízd z&nbsp;desktopu do kapsy?</p>
+      <p>Live jízda vznikla ze zadání vytvořit MVP mobilní verze Knihy jízd, která do té doby žila jen v&nbsp;desktopové aplikaci Fidoo. Knihu jízd používají lidé, kteří jezdí služebním autem nebo vlastním vozem vyřizují pracovní agendu. Některé firmy trasují jízdy přes GPS, Fidoo ale funguje jinak: uživatel si sám zapisuje stavy tachometru a&nbsp;najeté kilometry. Na konci měsíce knihu schvaluje fleet manažer, agenda je propojená se seznamem vozidel a&nbsp;propisuje se do vyúčtování zaměstnance.</p>
+      <p>Z&nbsp;feedbacku se nám často vracelo, že by uživatelé Knihu jízd ocenili v&nbsp;mobilu. Dává to smysl, mobil je to zařízení, které mají u&nbsp;sebe, když sedí za volantem.</p>
+      <p>Jenže přenést do mobilu celou Knihu jízd i&nbsp;s&nbsp;její komplexností by bylo časově i&nbsp;finančně náročné. Mým úkolem bylo vymyslet, jak uživatelům pomoct aspoň s&nbsp;tím nejpalčivějším.</p>
+      <p>Po pár rozhovorech s&nbsp;lidmi, kteří jezdí služebním autem bez GPS jednotky, se hlavní problém ukázal jasně: musí si pamatovat, odkud kam jeli a&nbsp;kolik kilometrů najeli, fotit si tachometr před jízdou a&nbsp;po ní a&nbsp;pak to všechno přepisovat do desktopu. Nejvíc jim tedy pomůžeme, když jim umožníme zapsat údaje rovnou v&nbsp;autě a&nbsp;část vyplníme automaticky.</p>
+      <p>Tak vznikl nápad Live jízda. Uživatel by si sedl do auta, otevřel Fidoo a&nbsp;kliknul na „Start jízdy“. Aplikace by předvyplnila aktuální datum a&nbsp;čas, místo podle GPS (odkud vyráží) i&nbsp;poslední auto, kterým jel, a&nbsp;natáhla by poslední známý stav tachometru. Cokoli by mohl upravit, nebo by prostě kliknul na Start a&nbsp;vyrazil. GPS by se používala jen pro předvyplnění místa startu a&nbsp;cíle, ne pro nepřetržité trasování (soukromí řidiče zůstává).</p>
+      <div class="project-screens">
+        <figure>
+          <img src="live-jizda-01.png" alt="Start jízdy" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Start jízdy</figcaption>
+        </figure>
+        <figure>
+          <img src="live-jizda-02.png" alt="Výběr vozidla ze seznamu firemních, poolových a soukromých aut" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Výběr vozidla</figcaption>
+        </figure>
+        <figure>
+          <img src="live-jizda-03.png" alt="Přehled výdajů s lištou probíhající aktivní jízdy a časomírou" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Aktivní jízda v&nbsp;přehledu výdajů</figcaption>
+        </figure>
+        <figure>
+          <img src="live-jizda-04.png" alt="Obrazovka Ukončit jízdu s najetými kilometry, cílem a uložením do knihy jízd" loading="lazy" onerror="this.closest('figure').style.display='none'">
+          <figcaption>Ukončení jízdy</figcaption>
+        </figure>
+      </div>
+      <p>Během cesty by Live jízda počítala čas a&nbsp;uměla by se připomenout, když by jízda trvala podezřele dlouho, třeba že ji uživatel zapomněl vypnout, nebo že je čas na pauzu. V&nbsp;cíli by kliknul na „Ukončit jízdu“, natáhl by se aktuální čas a&nbsp;místo, připsal by najeté kilometry a&nbsp;uložil je rovnou do knihy jízd.</p>
+      <p>Live jízda je v&nbsp;současné době nasazená v&nbsp;beta verzi pro všechny klienty a&nbsp;sbírá data o&nbsp;používání. Následovat by měl průzkum mezi uživateli, jestli jim Live jízda ulehčuje práci s&nbsp;Knihou jízd a&nbsp;co by případně změnili. A&nbsp;další rozvoj podle jejich potřeb.</p>
+      <p>Co by se mi ještě líbilo a&nbsp;jak by se to dalo posunout dál, je zjednodušení spuštění a&nbsp;ukončování Live jízdy. Nabízí se QR kód nebo NFC čip umístěný v&nbsp;autě, ideálně poblíž volantu. Po naskenování by Fidoo rovnou otevřelo Live jízdu s&nbsp;předvyplněným vozidlem, kterým uživatel jede. Ještě o&nbsp;krok dál by šel iBeacon (malá Bluetooth vysílačka v&nbsp;autě), díky kterému by telefon sám poznal, že se uživatel k&nbsp;vozu blíží, a&nbsp;poslal by mu notifikaci: „Vyrážíte? Zapněte si Live jízdu.“ Opět s&nbsp;předvyplněným autem, jen jedno tapnutí.</p>
+</template>
 
+<script>
+  (function () {
+    const overlay = document.querySelector('.project-overlay');
+    const titleEl = overlay.querySelector('.project-panel__title');
+    const tagsEl = overlay.querySelector('.project-tags');
+    const bodyEl = overlay.querySelector('.project-panel__body');
+    const panel = overlay.querySelector('.project-panel');
+    const closeBtn = overlay.querySelector('.project-panel__close');
+    let lastFocus = null;
+
+    function open(card) {
+      lastFocus = document.activeElement;
+      // jen vlastní text uzlu — bez případné inverzní kopie z kurzorového efektu
+      const ownText = (el) => Array.from(el.childNodes)
+        .filter((n) => n.nodeType === Node.TEXT_NODE)
+        .map((n) => n.textContent).join('').trim();
+      titleEl.textContent = ownText(card.querySelector('.work-card__title'));
+      tagsEl.innerHTML = ownText(card.querySelector('.work-card__tag'))
+        .split('·').map(t => `<li>${t.trim()}</li>`).join('');
+      const tpl = document.getElementById(card.dataset.project || 'project-default');
+      bodyEl.innerHTML = tpl.innerHTML;
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      panel.scrollTop = 0;
+      closeBtn.focus();
+    }
+    function close() {
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      if (lastFocus) lastFocus.focus();
+    }
+
+    document.querySelectorAll('.work-card[data-project]').forEach(card =>
+      card.addEventListener('click', (e) => { e.preventDefault(); open(card); }));
+    closeBtn.addEventListener('click', close);
+    overlay.querySelector('.project-overlay__backdrop').addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('is-open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'Tab') {
+        const f = overlay.querySelectorAll('button, a[href]');
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    // Inverze pouze glyfů textu: nad hoverovaným prvkem se vykreslí jeho
+    // invertovaná kopie, odmaskovaná měkkým kruhem (r = 40 px) pod kurzorem.
+    const SELECTOR = 'h1, h2, p, li, .btn, .nav__logo, .nav__links a, .contact__socials a, .contact__email, .work-card__title, .work-card__tag';
+    // + ', .hero__photo' — hover efekt na fotce zatím vypnutý
+    let host = null, copy = null;
+
+    function detach() {
+      if (copy) copy.remove();
+      host = null; copy = null;
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      const el = e.target.closest ? e.target.closest(SELECTOR) : null;
+      if (el !== host) {
+        detach();
+        if (el) {
+          host = el;
+          host.classList.add('invert-host');
+          copy = document.createElement(el.tagName === 'LI' ? 'span' : 'div');
+          copy.className = 'invert-copy' + (el.classList.contains('btn') ? ' invert-copy--flex' : '');
+          copy.setAttribute('aria-hidden', 'true');
+          if (el.classList.contains('hero__photo')) {
+            // průhledný výřez postavy — pozadí fotky se neinvertuje
+            copy.innerHTML = `<picture>
+              <source srcset="portrait-cutout-dark.png" media="(prefers-color-scheme: dark)">
+              <img src="portrait-cutout-light.png" alt="">
+            </picture>`;
+          } else {
+            copy.innerHTML = el.innerHTML;
+          }
+          host.appendChild(copy);
+        }
+      }
+      if (host && copy) {
+        const r = host.getBoundingClientRect();
+        copy.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        copy.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', detach);
+  })();
+</script>
 </body>
 </html>
