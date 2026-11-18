@@ -13,6 +13,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<!-- Umami — anonymní statistiky bez cookies (měří jen na pajinell.cz) -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="6271622a-fc8d-4e80-adc5-8b28368f5294" data-domains="pajinell.cz,www.pajinell.cz"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -177,10 +179,9 @@
   .projects { list-style: none; margin-top: 56px; border-top: 1px solid #DAD9D3; }
   .projects li { border-bottom: 1px solid #DAD9D3; }
   .project {
-    position: relative; display: grid; grid-template-columns: 64px 1fr auto auto; align-items: center; gap: 24px;
+    position: relative; display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 24px;
     padding: 30px 16px; color: var(--ink); text-decoration: none;
   }
-  .project .no { font: 12px var(--mono); color: var(--muted); }
   .project h3 { font-family: "Archivo", sans-serif; font-weight: 600; font-stretch: 72%; font-variation-settings: "wdth" 72;
     font-size: clamp(32px, 3.6vw, 54px); letter-spacing: -0.03em; line-height: 1.05; transition: transform .5s var(--ease); }
   .project .tags { font: 12px var(--mono); color: var(--muted); text-align: right; }
@@ -190,7 +191,7 @@
   a.project:hover::before, a.project:focus-visible::before { opacity: 1; }
   a.project:hover h3 { transform: translateX(10px); }
   .project.is-soon { cursor: default; }
-  .project.is-soon h3, .project.is-soon .no { color: #A9A8A3; }
+  .project.is-soon h3 { color: #A9A8A3; }
   .project .soon { font: 11px var(--mono); padding: 3px 9px; border: 1px solid transparent; border-image: linear-gradient(120deg, var(--dichro)) 1; background: rgba(255,255,255,.6); color: var(--muted); } /* stejný podklad jako štítek SmartEmailing */
 
 
@@ -212,8 +213,8 @@
     .editor { font-size: 12px; }
     section { padding: 90px 24px 40px; }
     .about { grid-template-columns: 1fr; row-gap: 30px; }
-    .project { grid-template-columns: 36px 1fr auto; gap: 14px; padding: 22px 6px; }
-    .project .tags { grid-column: 2 / 3; text-align: left; order: 3; }
+    .project { grid-template-columns: 1fr auto; gap: 14px; padding: 22px 6px; }
+    .project .tags { grid-column: 1 / 2; text-align: left; order: 3; }
     footer { padding: 30px 24px 40px; flex-direction: column-reverse; align-items: flex-start; gap: 40px; }
     .social { gap: 20px; }
   }
@@ -311,7 +312,7 @@
       <h2>Od kódu<br>k&nbsp;designu</h2>
     </div>
     <div>
-      <a class="now" href="https://www.smartemailing.cz/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">
+      <a class="now" data-umami-event="SmartEmailing (štítek)" href="https://www.smartemailing.cz/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">
         <span>teď tvořím ve: <strong>SmartEmailing</strong> ↗</span>
         <span class="sr-only"> (otevře se v&nbsp;novém okně)</span>
       </a>
@@ -321,9 +322,9 @@
         <summary>Více o mně</summary>
         <div class="body">
           <!-- TODO: finální text od Pavly -->
-          <p>K&nbsp;IT jsem se dostala díky <a href="https://www.czechitas.cz/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">Czechitas</a>. Jednodenní workshop „Vytvoř si svůj web“ mě nadchl natolik, že jsem se přihlásila na půlroční kurz frontend kodérky, dala výpověď v&nbsp;práci office manažerky a&nbsp;šla to zkusit. Přes rok jsem pak v&nbsp;Mall.cz tvořila a&nbsp;spravovala kampaňové stránky napříč celou Mall skupinou v&nbsp;pěti zemích.</p>
-          <p>Potom přišlo <a href="https://www.fidoo.com/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">Direct Fidoo</a> a&nbsp;s&nbsp;ním Angular. Stavěla jsem HTML šablony a&nbsp;starala se o&nbsp;sdílené komponenty napříč nx monorepem pro tři aplikace. Zažila jsem dva brandové redesigny a&nbsp;postupně se přesunula na pozici UX/UI designérky, kde jsem navrhovala podobu a&nbsp;flow pro vývoj Fidoo aplikací.</p>
-          <p>Od září 2026 píšu novou kapitolu ve <a href="https://www.smartemailing.cz/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">SmartEmailingu</a>. Mám možnost podílet se na UX/UI rozvoji webové aplikace, stylování komponent a&nbsp;stavbě nového webu.</p>
+          <p>K&nbsp;IT jsem se dostala díky <a data-umami-event="Czechitas" href="https://www.czechitas.cz/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">Czechitas</a>. Jednodenní workshop „Vytvoř si svůj web“ mě nadchl natolik, že jsem se přihlásila na půlroční kurz frontend kodérky, dala výpověď v&nbsp;práci office manažerky a&nbsp;šla to zkusit. Přes rok jsem pak v&nbsp;Mall.cz tvořila a&nbsp;spravovala kampaňové stránky napříč celou Mall skupinou v&nbsp;pěti zemích.</p>
+          <p>Potom přišlo <a data-umami-event="Fidoo" href="https://www.fidoo.com/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">Direct Fidoo</a> a&nbsp;s&nbsp;ním Angular. Stavěla jsem HTML šablony a&nbsp;starala se o&nbsp;sdílené komponenty napříč nx monorepem pro tři aplikace. Zažila jsem dva brandové redesigny a&nbsp;postupně se přesunula na pozici UX/UI designérky, kde jsem navrhovala podobu a&nbsp;flow pro vývoj Fidoo aplikací.</p>
+          <p>Od září 2026 píšu novou kapitolu ve <a data-umami-event="SmartEmailing (text)" href="https://www.smartemailing.cz/?utm_source=pajinell.cz&amp;utm_medium=referral&amp;utm_campaign=portfolio" target="_blank" rel="noopener">SmartEmailingu</a>. Mám možnost podílet se na UX/UI rozvoji webové aplikace, stylování komponent a&nbsp;stavbě nového webu.</p>
         </div>
       </details>
     </div>
@@ -334,13 +335,13 @@
   <div class="up"><h2>Vybrané projekty</h2></div>
   <ol class="projects up">
     <li><a class="project" href="#live-jizda" data-project="live-jizda">
-      <span class="no">01</span><h3>Live jízda</h3><span class="tags">fidoo · mobile · ux · mvp</span>
+      <h3>Live jízda</h3><span class="tags">fidoo · mobile · ux · mvp</span>
     </a></li>
     <li><a class="project" href="#registrace-klienta" data-project="onboarding">
-      <span class="no">02</span><h3>Registrace klienta</h3><span class="tags">fidoo · onboarding · fintech</span>
+      <h3>Registrace klienta</h3><span class="tags">fidoo · onboarding · fintech</span>
     </a></li>
     <li><div class="project is-soon">
-      <span class="no">03</span><h3>Design systém</h3><span class="tags">fidoo · ui · dokumentace</span><span class="soon">připravuji</span>
+      <h3>Design systém</h3><span class="tags">fidoo · ui · dokumentace</span><span class="soon">připravuji</span>
     </div></li>
   </ol>
 </section>
@@ -348,9 +349,9 @@
 <footer id="contact">
   <span>© 2026 Pavla Havránková</span>
   <nav class="social" aria-label="Kontakty">
-    <a href="mailto:me@pajinell.cz">me@pajinell.cz</a>
-    <a href="https://www.linkedin.com/in/pajinell/" target="_blank" rel="noopener">LinkedIn ↗<span class="sr-only"> (otevře se v&nbsp;novém okně)</span></a>
-    <a href="https://www.instagram.com/pajinell/" target="_blank" rel="noopener">Instagram ↗<span class="sr-only"> (otevře se v&nbsp;novém okně)</span></a>
+    <a data-umami-event="E-mail" href="mailto:me@pajinell.cz">me@pajinell.cz</a>
+    <a data-umami-event="LinkedIn" href="https://www.linkedin.com/in/pajinell/" target="_blank" rel="noopener">LinkedIn ↗<span class="sr-only"> (otevře se v&nbsp;novém okně)</span></a>
+    <a data-umami-event="Instagram" href="https://www.instagram.com/pajinell/" target="_blank" rel="noopener">Instagram ↗<span class="sr-only"> (otevře se v&nbsp;novém okně)</span></a>
   </nav>
 </footer>
 
@@ -470,6 +471,12 @@
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; selectTab(n); n.focus(); }
     });
   });
+  // ---------- statistiky (Umami) ----------
+  const track = (name, data) => { if (window.umami) umami.track(name, data); };
+  document.querySelectorAll('a.project[data-project]').forEach(a =>
+    a.addEventListener('click', () => track('Projekt: ' + a.querySelector('h3').textContent)));
+  document.querySelector('.more')?.addEventListener('toggle', (e) => { if (e.target.open) track('Více o mně'); });
+  document.getElementById('tab-selfie')?.addEventListener('click', () => track('Selfie'));
 </script>
 </body>
 </html>
